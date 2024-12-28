@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Ping Pong</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Section Create Account -->
+        <div class="signup">
+            <h2>Create Account</h2>
+            <div class="game-area">
+                <div class="paddle left-paddle"></div>
+            </div>
+            <div class="logo">
+                <!-- Bouton Google -->
+                <button class="btn btn-google">
+                    <img src="icon/google.png" alt="Google" width="20"> Continue with Google
+                </button>
+            
+                <!-- Bouton 42 -->
+                <button class="btn btn-42">
+                    <img src="icon/Vector.png" alt="42" width="20"> Continue with 42
+                </button>
+            </div>
+            
+            <p>or use your email for registration</p>
+            <div class="input-group">
+                <input type="text" placeholder="Name">
+            </div>
+            <div class="input-group">
+                <input type="email" placeholder="Email">
+            </div>
+            <div class="input-group">
+                <input type="password" placeholder="Password">
+            </div>
+            <button class="btn btn-signup">SIGN UP</button>
+        </div>
+
+        <!-- Section Sign In -->
+        <div class="signin">
+            <h2>PING<br>PONG</h2>
+            <div class="game-area">
+                <div class="paddle right-paddle"></div>
+            </div>
+            <button class="btn btn-signin">SIGN IN</button>
+        </div>
+        <div class="ball"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(100deg, #62272D, #000000);
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 900px; 
+    height: auto; 
+    display: flex;
+    flex-direction: row; 
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Sections */
+.signup, .signin {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.signup {
+    background-color: #4a1f22;
+    color: white;
+}
+
+.signin {
+    background-color: #320208;
+    color: #ffcc00;
+}
+
+/* Ball */
+.ball {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(163, 180, 14);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: ballMove 3s infinite alternate ease-in-out;
+}
+
+/* Paddles */
+.paddle {
+    position: absolute;
+    width: 10px;
+    height: 80px;
+    background-color: #ffcc00;
+    border-radius: 5px;
+}
+
+.left-paddle {
+    left: 10px;
+    animation: paddleMoveLeft 2s infinite alternate ease-in-out; 
+}
+
+.right-paddle {
+    right: 10px;
+    animation: paddleMoveRight 2s infinite alternate ease-in-out; 
+}
+
+/* Input Fields */
+.input-group {
+    width: 90%;
+    margin-bottom: 15px;
+}
+
+.input-group input {
+    width: 94%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.input-group input:focus {
+    border-color: #1ea0af;
+    outline: none;
+    box-shadow: 0 0 8px rgba(255, 165, 0, 0.5);
+}
+
+/* Buttons */
+.btn {
+    width: 90%;
+    padding: 12px;
+    background-color: #ffcc00;
+    color: #073b27;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+}
+
+.btn:hover {
+    background-color: #ffcc00;
+    color: white;
+    transform: scale(1.05);
+}
+
+.btn:active {
+    background-color: #ffcc00;
+    transform: scale(1);
+}
+
+/* Animations */
+@keyframes paddleMoveLeft {
+    0% {
+        top: calc(100% - 80px); 
+    }
+    100% {
+        top: 0%; 
+    }
+}
+
+@keyframes paddleMoveRight {
+    0% {
+        top: 0%; 
+    }
+    100% {
+        top: calc(100% - 80px); 
+    }
+}
+
+@keyframes ballMove {
+    0% {
+        left: 10%;
+        top: 90%;
+    }
+    100% {
+        left: 90%;
+        top: 10%;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; 
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .signup, .signin {
+        width: 100%; 
+        padding: 15px;
+    }
+
+    .ball {
+        width: 15px;
+        height: 15px;
+    }
+
+    .paddle {
+        width: 8px;
+        height: 60px;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%; 
+    }
+
+    .signup, .signin {
+        padding: 10px;
+    }
+
+    .ball {
+        width: 12px;
+        height: 12px;
+    }
+
+    .paddle {
+        width: 6px;
+        height: 50px;
+    }
+
+    .btn {
+        font-size: 0.8rem;
+        padding: 8px 15px;
+    }
+
+    .input-group input {
+        padding: 10px;
+        font-size: 0.85rem;
+    }
+}
